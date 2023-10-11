@@ -12,10 +12,11 @@ board7 = "*"
 board8 = "*"
 board9 = "*"
 
-turn = 0
+turn = 1
 
 coX = 0
 coY = 0
+
 
 winCondition = False
 
@@ -40,7 +41,9 @@ def placeToken(coX,coY):
 
     beurtGelukt = False
 
-    while not beurtGelukt:
+    while beurtGelukt == False:
+        coX = int(input("In welke rij wil je plaatsen? > "))
+        coY = int(input("In welke kolom wil je plaatsen? > "))
         if coX == 1:
             if coY == 1:
                 if board1 == "*":
@@ -125,6 +128,7 @@ def placeToken(coX,coY):
                     beurtGelukt = True
                 else:
                     print("This spot is taken, try again.")
+    beurtGelukt = True
 
 def checkWinCondition():
     global winCondition
@@ -138,37 +142,37 @@ def checkWinCondition():
     global board8    
     global board9
     
-    if (board1 and board2 and board3) == "x":
+    if board1 == "X" and board2 == "X" and board3 == "X":
         winCondition = True
-    elif (board4 and board5 and board6) == "x":
+    elif board4 == "X" and board5 == "X" and board6 == "X":
         winCondition = True
-    elif (board7 and board8 and board9) == "x":
+    elif board7 == "X" and board8 == "X" and board9 == "X":
         winCondition = True
-    elif (board1 and board4 and board7) == "x":
+    elif board1 == "X" and board4 == "X" and board7 == "X":
         winCondition = True
-    elif (board2 and board5 and board8) == "x":
+    elif board2 == "X" and board5 == "X" and board8 == "X":
         winCondition = True
-    elif (board3 and board6 and board9) == "x":
+    elif board3 == "X" and board6 == "X" and board9 == "X":
         winCondition = True
-    elif (board1 and board5 and board9) == "x":
+    elif board1 == "X" and board5 == "X" and board9 == "X":
         winCondition = True
-    elif (board7 and board5 and board3) == "x":
+    elif board7 == "X" and board5 == "X" and board3 == "X":
         winCondition = True
-    elif (board1 and board2 and board3) == "O":
+    elif board1 == "O" and board2 == "O" and board3 == "O":
         winCondition = True
-    elif (board4 and board5 and board6) == "O":
+    elif board4 == "O" and board5 == "O" and board6 == "O":
         winCondition = True
-    elif (board7 and board8 and board9) == "O":
+    elif board7 == "O" and board8 == "O" and board9 == "O":
         winCondition = True
-    elif (board1 and board4 and board7) == "O":
+    elif board1 == "O" and board4 == "O" and board7 == "O":
         winCondition = True
-    elif (board2 and board5 and board8) == "O":
+    elif board2 == "O" and board5 == "O" and board8 == "O":
         winCondition = True
-    elif (board3 and board6 and board9) == "O":
+    elif board3 == "O" and board6 == "O" and board9 == "O":
         winCondition = True
-    elif (board1 and board5 and board9) == "O":
+    elif board1 == "O" and board5 == "O" and board9 == "O":
         winCondition = True
-    elif (board7 and board5 and board3) == "O":
+    elif board7 == "O" and board5 == "O" and board3 == "O":
         winCondition = True
        
        
@@ -176,15 +180,11 @@ def checkWinCondition():
 while winCondition == False:
     if turn == 0:
         drawGrid()
-        coX = int(input("In welke rij wil je plaatsen? > "))
-        coY = int(input("In welke kolom wil je plaatsen? > "))
         placeToken(coX,coY)
         turn = turn + 1
         checkWinCondition()
     else:
         drawGrid()
-        coX = int(input("In welke rij wil je plaatsen? > "))
-        coY = int(input("In welke kolom wil je plaatsen? > "))
         placeToken(coX,coY)
         turn = turn - 1
         checkWinCondition()

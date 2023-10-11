@@ -38,97 +38,102 @@ def placeToken(coX,coY):
     global board7
     global board8    
     global board9
-
+    
     beurtGelukt = False
 
     while beurtGelukt == False:
-        coX = int(input("In welke rij wil je plaatsen? > "))
-        coY = int(input("In welke kolom wil je plaatsen? > "))
-        if coX == 1:
-            if coY == 1:
-                if board1 == "*":
-                    if turn == 1:
-                        board1 = "X"
-                    elif turn == 0:
-                        board1 = "O"
-                    beurtGelukt = True
-                else:
-                    print("This spot is taken, try again.")
-            elif coY == 2:
-                if board2 == "*":
-                    if turn == 1:
-                        board2 = "X"
-                    elif turn == 0:
-                        board2 = "O"
-                    beurtGelukt = True
-                else:
-                    print("This spot is taken, try again.")
-            elif coY == 3:
-                if board3 == "*":
-                    if turn == 1:
-                        board3 = "X"
-                    elif turn == 0:
-                        board3 = "O"
-                    beurtGelukt = True
-                else:
-                    print("This spot is taken, try again.")
-        if coX == 2:
-            if coY == 1:
-                if board4 == "*":
-                    if turn == 1:
-                        board4 = "X"
-                    elif turn == 0:
-                        board4 = "O"
-                    beurtGelukt = True
-                else:
-                    print("This spot is taken, try again.")
-            elif coY == 2:
-                if board5 == "*":
-                    if turn == 1:
-                        board5 = "X"
-                    elif turn == 0:
-                        board5 = "O"
-                    beurtGelukt = True
-                else:
-                    print("This spot is taken, try again.")
-            elif coY == 3:
-                if board6 == "*":
-                    if turn == 1:
-                        board6 = "X"
-                    elif turn == 0:
-                        board6 = "O"
-                    beurtGelukt = True
-                else:
-                    print("This spot is taken, try again.")
-        if coX == 3:
-            if coY == 1:
-                if board7 == "*":
-                    if turn == 1:
-                        board7 = "X"
-                    elif turn == 0:
-                        board7 = "O"
-                    beurtGelukt = True
-                else:
-                    print("This spot is taken, try again.")
-            elif coY == 2:
-                if board8 == "*":
-                    if turn == 1:
-                        board8 = "X"
-                    elif turn == 0:
-                        board8 = "O"
-                    beurtGelukt = True
-                else:
-                    print("This spot is taken, try again.")
-            elif coY == 3:
-                if board9 == "*":
-                    if turn == 1:
-                        board9 = "X"
-                    elif turn == 0:
-                        board9 = "O"
-                    beurtGelukt = True
-                else:
-                    print("This spot is taken, try again.")
-    beurtGelukt = True
+        coX = int(input("In which row would you like to place your counter? > "))
+        coY = int(input("In which column would you like to place your counter? > "))
+        if 1 > coX > 3:
+            print("Sorry, that is not a point on the grid. Please try again.")
+        elif 1 > coY > 3:
+            print("Sorry, that is not a point on the grid. Please try again.")
+        else:
+            if coX == 1:
+                if coY == 1:
+                    if board1 == "*":
+                        if turn == 1:
+                            board1 = "X"
+                        elif turn == 0:
+                            board1 = "O"
+                        beurtGelukt = True
+                    else:
+                        print("This spot is taken, please try again.")
+                elif coY == 2:
+                    if board2 == "*":
+                        if turn == 1:
+                            board2 = "X"
+                        elif turn == 0:
+                            board2 = "O"
+                        beurtGelukt = True
+                    else:
+                        print("This spot is taken, please try again.")
+                elif coY == 3:
+                    if board3 == "*":
+                        if turn == 1:
+                            board3 = "X"
+                        elif turn == 0:
+                            board3 = "O"
+                        beurtGelukt = True
+                    else:
+                        print("This spot is taken, try again.")
+            if coX == 2:
+                if coY == 1:
+                    if board4 == "*":
+                        if turn == 1:
+                            board4 = "X"
+                        elif turn == 0:
+                            board4 = "O"
+                        beurtGelukt = True
+                    else:
+                        print("This spot is taken, try again.")
+                elif coY == 2:
+                    if board5 == "*":
+                        if turn == 1:
+                            board5 = "X"
+                        elif turn == 0:
+                            board5 = "O"
+                        beurtGelukt = True
+                    else:
+                        print("This spot is taken, try again.")
+                elif coY == 3:
+                    if board6 == "*":
+                        if turn == 1:
+                            board6 = "X"
+                        elif turn == 0:
+                            board6 = "O"
+                        beurtGelukt = True
+                    else:
+                        print("This spot is taken, try again.")
+            if coX == 3:
+                if coY == 1:
+                    if board7 == "*":
+                        if turn == 1:
+                            board7 = "X"
+                        elif turn == 0:
+                            board7 = "O"
+                        beurtGelukt = True
+                    else:
+                        print("This spot is taken, try again.")
+                elif coY == 2:
+                    if board8 == "*":
+                        if turn == 1:
+                            board8 = "X"
+                        elif turn == 0:
+                            board8 = "O"
+                        beurtGelukt = True
+                    else:
+                        print("This spot is taken, try again.")
+                elif coY == 3:
+                    if board9 == "*":
+                        if turn == 1:
+                            board9 = "X"
+                        elif turn == 0:
+                            board9 = "O"
+                        beurtGelukt = True
+                    else:
+                        print("This spot is taken, try again.")
+        beurtGelukt = True
 
 def checkWinCondition():
     global winCondition
@@ -180,11 +185,13 @@ def checkWinCondition():
 while winCondition == False:
     if turn == 0:
         drawGrid()
+        print("Player 2")
         placeToken(coX,coY)
         turn = turn + 1
         checkWinCondition()
     else:
         drawGrid()
+        print("Player 1")
         placeToken(coX,coY)
         turn = turn - 1
         checkWinCondition()
